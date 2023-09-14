@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electron & MySQL</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+}
+ 
+#products {
+  height: 100vh;
+  overflow-y: auto;
+  padding: 2px
+}
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+ 
+</head>
+ 
+<body>
+ 
+  <main class="container-fluid">
+ 
+    <div class="row">
+ 
+      <div class="col-md-6 p-4 my-auto">
+ 
+        <!-- Employee Form -->
+        <form id="EmployeeForm" class="card card-body">
+          <div class="form-group">
+            <input type="text" id="name" placeholder="Employee's Name" required maxlength="30" class="form-control" autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" id="designation" style="margin-top:5px;" required placeholder="Employee's Designation" maxlength="30" class="form-control">
+          </div>
+          <div class="form-group" style="margin-top:5px;">
+              <button type="submit" class="btn btn-primary">
+                Save
+              </button>
+              <button type="reset" class="btn btn-danger">
+                Cancel
+              </button>
+          </div>
+        </form>
+ 
+      </div>
+ 
+      <!-- Employee List -->
+      <div class="col-md-6">
+        <div id="employee"></div>
+      </div>
+    </div>
+  </main>
+  <script src="./app.js"></script> 
+</body> 
+</html>
