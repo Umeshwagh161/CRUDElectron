@@ -1,6 +1,5 @@
-const { remote } = require("electron");
+const { ipcRenderer } = require("electron");
 const main  = require("./index");
-
 
 const employees = document.querySelector("#employee");
 const name = document.querySelector("#name");
@@ -82,9 +81,16 @@ const getProducts = async () => {
   employee = await main.getProducts();
   renderProducts(employee);
 };
- 
+
 async function init() {
-  getProducts();
+  getProducts(); 
+  ipcRenderer.send('getversion');
+  ipcRenderer.on('sendversion',(event,appVer)=>{
+    let version = document.querySelector("#version");    
+    version.innerHTML += appVer;
+  });
+ 
+
 }
  
 init();
